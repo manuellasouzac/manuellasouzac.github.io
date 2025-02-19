@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"  href="file:///C:/SCBR/SABRINACARPENTER/SC-p%C3%A1ginas/cadastro.css"> <!--href="/SC-páginas/cadastro.css-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Monsieur+La+Doulaise&family=Pinyon+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!--link das fontes de texto utilizadas em todo o site-->
+
+    <title>SCBR - CADASTRE-SE</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-img">
+            <img src="SABRINACARPENTER\SC-medias\sab.png" class="sab" alt="Imagem de Sabrina Carpenter">
+        </div>
+        <div class="form">
+            <!--validação do formulário:-->
+            <form id="formulario" method="post" onsubmit="return validarFormulario(event)">
+                <div class="form-header">
+                    <div class="title">
+                        <h1 class="cad">Cadastre-se</h1>
+                    </div>
+                    <!--cabeçalho do formulário com o título do container (cadastre-se) e o botão da página de login:-->
+                    <div class="botao-login">
+                        <button id="botao2" type="button" onclick="window.location.href='C:/SCBR/SABRINACARPENTER/SC-p%C3%A1ginas/login.html'" class="botao2">ENTRAR</button>
+                    </div>
+                    <!--ao clicar no botão entrar o usuário é direcionado para a página de login-->
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="nome">Nome</label>
+                        <input id="nome" type="text" name="nome" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="usuario">Nome de usuário</label>
+                        <input id="usuario" type="text" name="usuario" placeholder="Digite seu nome de usuário" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="numero">Celular</label>
+                        <input id="numero" type="tel" name="numero" placeholder="(xx) xxxx-xxxx" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="senha">Senha</label>
+                        <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="confirmSenha">Confirme sua Senha</label>
+                        <input id="confirmSenha" type="password" name="confirmSenha"
+                            placeholder="Digite sua senha novamente" required>
+                    </div>
+                </div>
+
+                <!--caixas de texto do formulário; a opção placeholder faz com que uma frase apareça na caixa de texto solicitando que o usuário
+                preencha os campos; required exige que o usuário preencha os campos e que não deixe vazio-->
+
+                <div class="genero-inputs">
+                    <div class="genero-titulo">
+                        <h3 class="gen">Gênero</h3>
+                    </div>
+                    <div class="genero-group">
+                        <div class="genero-input">
+                            <input id="feminino" type="radio" name="genero" value="feminino" required>
+                            <label for="feminino">Feminino</label>
+                        </div>
+                        <div class="genero-input">
+                            <input id="masculino" type="radio" name="genero" value="masculino">
+                            <label for="masculino">Masculino</label>
+                        </div>
+                        <div class="genero-input">
+                            <input id="outros" type="radio" name="genero" value="outros">
+                            <label for="outros">Outros</label>
+                        </div>
+                        <div class="genero-input">
+                            <input id="none" type="radio" name="genero" value="none">
+                            <label for="none">Prefiro não dizer</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!--inputs de gêneero de tipo radio para o usuário marcar apenas uma opção-->
+
+                <div class="continuar-button">
+                    <button id="botao" type="submit" class="botao">Continuar</button>
+                </div>
+
+                <!--botão continuar, onde ao clicar o usuário será direcionado para a página index caso
+                todos os inputs do formulário sejam preenchidos corretamente. caso não tenham sido
+                devidamente preenchidos o javascript irá emitir alertas até o usuário corrigir as informações;
+                só assim ele poderá acessar a página index.-->
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validarFormulario(event) {
+            const nome = document.getElementById('nome').value;
+            const usuario = document.getElementById('usuario').value;
+            const email = document.getElementById('email').value;
+            const numero = document.getElementById('numero').value;
+            const senha = document.getElementById('senha').value;
+            const confirmSenha = document.getElementById('confirmSenha').value;
+            /*validação do formulário*/
+
+            if (nome.length < 3) {
+                alert("O nome deve ter pelo menos três caracteres");
+                return false;
+            }
+            /*validação do nome: se o usuário inserir um nome com menos de 3 caracteres
+            será emitido um alerta para o usuário tentar novamente*/
+
+            if (usuario.length < 4) {
+                alert("O nome de usuário deve ter pelo menos quatro caracteres");
+                return false;
+            }
+            /*validação do usuarioe: se o usuário inserir um nome de usuario com menos de 4 caracteres
+            será emitido um alerta para o usuário tentar novamente*/
+            
+            if (numero.length < 8) {
+                alert("Insira um número de celular válido");
+                return false;
+            }
+            /*validação do telefone: se o usuário inserir um numero de telefone com menos de 8 caracteres, fora
+            do formato (xx) xxxx-xxxx, será emitido um alerta para o usuário tentar novamente*/
+
+            if (senha !== confirmSenha) {
+                alert("As senhas devem ser iguais");
+                return false;
+            }
+            /*validação das senhas: se o usuário inserir uma senha de confirmação diferente da primeira senha que foi
+            inserida, será emitido um alerta para o usuário tentar novamente até que ambas as senhas estejam iguais */
+
+            
+            window.location.href = 'index.html';
+            return false;
+            /*redireciona para a página index caso a validação esteja correta*/
+        }
+    </script>
+</body>
+
+</html>
